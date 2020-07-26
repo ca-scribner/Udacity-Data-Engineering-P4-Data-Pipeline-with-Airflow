@@ -40,10 +40,10 @@ class DataQualityOperator(BaseOperator):
         """
         Applies the test
         """
-        self.log.info(f"Checking quality of {self.table}")
+        self.log.info(f"Checking data quality")
         
         redshift_hook = PostgresHook(self.conn_id)
         results = redshift_hook.get_records(self.sql_quality)
         
         self.condition(results)
-        self.log.info(f"Checking quality completed without error")
+        self.log.info(f"Checking data quality completed without error")
