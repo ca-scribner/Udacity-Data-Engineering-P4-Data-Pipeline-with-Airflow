@@ -46,4 +46,4 @@ class DataQualityOperator(BaseOperator):
         results = redshift_hook.get_records(self.sql_quality)
         
         self.condition(results)
-        self.log.info(f"Checking quality of {self.table} completed without error")
+        self.log.info(f"Checking quality completed without error")
